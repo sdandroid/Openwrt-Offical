@@ -55,7 +55,6 @@ jobs:
           git clone $REPO_URL -b $REPO_BRANCH openwrt && cd openwrt && git checkout v21.02.1
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
           cd $GITHUB_WORKSPACE && ls -lh && pwd
-          cat /home/runner/work/Openwrt-Offical/diy-part1.sh
           cat /home/runner/work/Openwrt-Offical/Openwrt-Offical/diy-part1.sh
 
 
