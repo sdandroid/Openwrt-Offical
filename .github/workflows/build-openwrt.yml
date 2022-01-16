@@ -58,8 +58,10 @@ jobs:
         working-directory: /workdir
         run: |
           df -hT $PWD
-          git clone $REPO_URL  openwrt && cd openwrt && git checkout v21.02.1
+          git clone $REPO_URL -b $REPO_BRANCH openwrt && cd openwrt && git checkout v21.02.1
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+          cd $GITHUB_WORKSPACE && ls -lh
+           
 
       - name: Load custom feeds
         run: |
@@ -73,9 +75,6 @@ jobs:
 
       - name: Install feeds
         run: cd openwrt && ./scripts/feeds install -a
-
-      - name: Clone feeds
-        run: cd openwrt && git clone https://github.com/yichya/luci-app-xray.git package/luci-app-xray
 
       - name: Load custom configuration
         run: |
