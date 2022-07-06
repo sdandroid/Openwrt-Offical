@@ -75,7 +75,7 @@ jobs:
         run: cd openwrt && ./scripts/feeds install -a
 
       - name: Clone app
-        run: cd openwrt && git clone https://github.com/yichya/luci-app-xray.git package/luci-app-xray
+        run: cd openwrt && git clone https://github.com/ttimasdf/luci-app-xray package/luci-app-xray
 
       - name: Load custom configuration
         run: |
