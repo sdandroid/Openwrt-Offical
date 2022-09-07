@@ -68,14 +68,14 @@ jobs:
           cd openwrt
           $GITHUB_WORKSPACE/$DIY_P1_SH
 
+      - name: Clone app
+        run: cd openwrt && git clone https://github.com/yichya/luci-app-xray package/luci-app-xray
+
       - name: Update feeds
         run: cd openwrt && ./scripts/feeds update -a
 
       - name: Install feeds
         run: cd openwrt && ./scripts/feeds install -a
-
-      - name: Clone app
-        run: cd openwrt && git clone https://github.com/yichya/luci-app-xray package/luci-app-xray
 
       - name: Load custom configuration
         run: |
